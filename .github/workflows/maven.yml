@@ -24,3 +24,6 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Test with Maven
       run: mvn test
+      env:
+        MONGODB_USERNAME: admin
+        MONGODB_PASSORD: admin
