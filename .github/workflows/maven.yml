@@ -25,5 +25,5 @@ jobs:
     - name: Test with Maven
       run: mvn test
       env:
-        MONGODB_USERNAME: admin
-        MONGODB_PASSORD: admin
+        MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+        MONGODB_PASSORD: ${{ secrets.MONGODB_PASSORD }}
