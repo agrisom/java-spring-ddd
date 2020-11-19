@@ -1,8 +1,7 @@
 package com.griso.hexagonal.product.application.service.implementation;
 
-import com.griso.hexagonal.product.application.service.definition.IProductService;
 import com.griso.hexagonal.product.domain.model.Product;
-import com.griso.hexagonal.product.domain.repository.IProductRepository;
+import com.griso.hexagonal.product.domain.repository.ProductRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -12,11 +11,11 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @Service
-public class ProductService implements IProductService {
+public class ProductServiceImpl implements com.griso.hexagonal.product.application.service.definition.ProductService {
 
-    private final IProductRepository productRepo;
+    private final ProductRepository productRepo;
 
-    public ProductService(IProductRepository productRepo) {
+    public ProductServiceImpl(ProductRepository productRepo) {
         this.productRepo = productRepo;
     }
 

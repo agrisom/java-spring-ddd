@@ -7,7 +7,7 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 import java.util.Optional;
 
-public interface IProductRepository {
+public interface ProductRepository {
     <S extends Product> S save(S s);
 
     Optional<Product> findById(String s);

@@ -1,6 +1,6 @@
 package com.griso.hexagonal.product.adapter.rest.controller.implementation;
 
-import com.griso.hexagonal.product.adapter.repository.ProductRepositoryMock;
+import com.griso.hexagonal.product.adapter.repository.ProductRepositoryMongoDb;
 import com.griso.hexagonal.product.adapter.rest.controller.definition.PublicProductController;
 import com.griso.hexagonal.product.application.service.definition.ProductService;
 import com.griso.hexagonal.product.application.service.implementation.ProductServiceImpl;
@@ -18,14 +18,14 @@ import java.util.List;
 
 @RestController
 @Controller
-@RequestMapping("/v0/public/product")
-@Api(tags = "Public product APIs - Beta")
-public class PublicProductControllerV0 implements PublicProductController {
+@RequestMapping("/v1/public/product")
+@Api(tags = "Public product APIs")
+public class PublicProductControllerV1 implements PublicProductController {
 
     ProductService productService;
-    
+
     @Autowired
-    ProductRepositoryMock productRepository;
+    ProductRepositoryMongoDb productRepository;
 
     @Override
     public Page<Product> getProducts(Integer page, Integer size, String sortBy, String sortDir) {

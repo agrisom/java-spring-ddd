@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-public interface IPublicProductController {
+public interface PublicProductController {
 
     @GetMapping
     Page<Product> getProducts(
@@ -22,10 +22,10 @@ public interface IPublicProductController {
     Product findById(@PathVariable(required = true) String id);
 
     @PostMapping
-    Product save(Product product);
+    Product save(@RequestBody Product product);
 
     @PatchMapping
-    Product update(Product product);
+    Product update(@RequestBody Product product);
 
     @DeleteMapping("/{id}")
     void delete(@PathVariable(required = true) String id);
