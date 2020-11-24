@@ -6,7 +6,6 @@ import com.griso.hexagonal.product.adapter.repository.ProductRepositoryMongoDb;
 import com.griso.hexagonal.product.adapter.rest.controller.definition.PublicProductController;
 import com.griso.hexagonal.product.application.service.definition.ProductService;
 import com.griso.hexagonal.product.application.service.implementation.ProductServiceImpl;
-import com.griso.hexagonal.product.domain.model.Product;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

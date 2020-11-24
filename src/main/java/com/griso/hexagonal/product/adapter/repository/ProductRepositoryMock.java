@@ -28,7 +28,7 @@ public class ProductRepositoryMock implements ProductRepository {
     @Override
     public List<Product> findAll() {
         Product product = new Product();
-        product.setId("ajhdsfal2knp23453");
+        product.setId("5fbcfd6eb9eba16cef5acb05");
         product.setName("Test product");
         product.setDescription("Mocked product");
         product.setPrice(14);
@@ -43,6 +43,6 @@ public class ProductRepositoryMock implements ProductRepository {
 
     @Override
     public void deleteById(String s) {
-
+        // No ha de realitzar accions
     }
 }

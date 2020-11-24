@@ -26,4 +26,4 @@ jobs:
       run: mvn test
       env:
         MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
-        MONGOBD_PASSWORD: ${{ secrets.MONGOBD_PASSWORD }}
+        MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
