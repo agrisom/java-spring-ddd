@@ -1,6 +1,6 @@
 package com.griso.hexagonal.product.adapter.rest.controller.definition;
 
-import com.griso.hexagonal.product.domain.model.Product;
+import com.griso.hexagonal.product.adapter.dto.ProductDto;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,23 +9,23 @@ import java.util.List;
 public interface PublicProductController {
 
     @GetMapping
-    Page<Product> getProducts(
+    Page<ProductDto> getProducts(
             @RequestParam(required = false, defaultValue = "0") Integer page,
             @RequestParam(required = false, defaultValue = "10") Integer size,
             @RequestParam(required = false, defaultValue = "id") String sortBy,
             @RequestParam(required = false, defaultValue = "ASC") String sortDir);
 
     @GetMapping("/all")
-    List<Product> getAllProducts();
+    List<ProductDto> getAllProducts();
 
     @GetMapping("/{id}")
-    Product findById(@PathVariable(required = true) String id);
+    ProductDto findById(@PathVariable(required = true) String id);
 
     @PostMapping
-    Product save(@RequestBody Product product);
+    ProductDto save(@RequestBody ProductDto product);
 
     @PatchMapping
-    Product update(@RequestBody Product product);
+    ProductDto update(@RequestBody ProductDto product);
 
     @DeleteMapping("/{id}")
     void delete(@PathVariable(required = true) String id);

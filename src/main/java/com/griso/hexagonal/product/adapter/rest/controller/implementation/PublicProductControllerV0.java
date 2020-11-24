@@ -1,10 +1,11 @@
 package com.griso.hexagonal.product.adapter.rest.controller.implementation;
 
+import com.griso.hexagonal.product.adapter.dto.ProductDto;
+import com.griso.hexagonal.product.adapter.mapper.ProductMapper;
 import com.griso.hexagonal.product.adapter.repository.ProductRepositoryMock;
 import com.griso.hexagonal.product.adapter.rest.controller.definition.PublicProductController;
 import com.griso.hexagonal.product.application.service.definition.ProductService;
 import com.griso.hexagonal.product.application.service.implementation.ProductServiceImpl;
-import com.griso.hexagonal.product.domain.model.Product;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -23,39 +24,42 @@ import java.util.List;
 public class PublicProductControllerV0 implements PublicProductController {
 
     ProductService productService;
-    
+
+    @Autowired
+    ProductMapper productMapper;
+
     @Autowired
     ProductRepositoryMock productRepository;
 
     @Override
-    public Page<Product> getProducts(Integer page, Integer size, String sortBy, String sortDir) {
+    public Page<ProductDto> getProducts(Integer page, Integer size, String sortBy, String sortDir) {
         productService = new ProductServiceImpl(productRepository);
         return productService.getAll(PageRequest.of(page, size,
-                Sort.by(Sort.Direction.fromString(sortDir), sortBy)));
+                Sort.by(Sort.Direction.fromString(sortDir), sortBy))).map(productMapper::toProductView);
     }
 
     @Override
-    public List<Product> getAllProducts() {
+    public List<ProductDto> getAllProducts() {
         productService = new ProductServiceImpl(productRepository);
-        return productService.getAll();
+        return productMapper.toProductViewList(productService.getAll());
     }
 
     @Override
-    public Product findById(String id) {
+    public ProductDto findById(String id) {
         productService = new ProductServiceImpl(productRepository);
-        return productService.findById(id);
+        return productMapper.toProductView(productService.findById(id));
     }
 
     @Override
-    public Product save(Product product) {
+    public ProductDto save(ProductDto product) {
         productService = new ProductServiceImpl(productRepository);
-        return productService.save(product);
+        return productMapper.toProductView(productService.save(productMapper.toProductModel(product)));
     }
 
     @Override
-    public Product update(Product product) {
+    public ProductDto update(ProductDto product) {
         productService = new ProductServiceImpl(productRepository);
-        return productService.save(product);
+        return productMapper.toProductView(productService.save(productMapper.toProductModel(product)));
     }
 
     @Override
