@@ -66,8 +66,6 @@ Y
 )target/classes/application-dev.properties,b/2/b27a41a5c8eca39eab0c8dcb27f61448b331ae0b
 s
 Csrc/main/java/com/griso/hexagonal/product/domain/model/Product.java,7/f/7fcee635c50a45c7dd4a552fe4ae00124c9071df
-Y
-)src/main/resources/application.properties,0/6/06f65155ec73600b9fc5c4dc2883d4bb84d8e284
 U
 %target/classes/application.properties,b/b/bb173f9557479135e0f1bcd9c6c5f7b4ae5f77e8
 ‚
@@ -86,8 +84,6 @@ osrc/main/java/com/griso/hexagonal/product/adapter/rest/controller/implementatio
 osrc/main/java/com/griso/hexagonal/product/adapter/rest/controller/implementation/PublicProductControllerV1.java,4/7/4711d2d93b890728f35c1e8646289595017a02f2
 Š
 Zsrc/main/java/com/griso/hexagonal/product/adapter/repository/ProductRepositoryMongoDb.java,2/4/2406573d9f8d48fbee0506f3889e5451b8e0d1bf
-]
--src/main/resources/application-dev.properties,c/3/c37467157e01027b51d4a92acec42e9af665ad9b
 u
 Esrc/main/java/com/griso/hexagonal/common/config/WebConfiguration.java,f/a/faf652f01b08f739e334ce2059af4d98d01e93c3
 r
