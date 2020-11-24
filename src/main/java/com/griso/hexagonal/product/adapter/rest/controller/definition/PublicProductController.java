@@ -19,7 +19,7 @@ public interface PublicProductController {
     List<ProductDto> getAllProducts();
 
     @GetMapping("/{id}")
-    ProductDto findById(@PathVariable(required = true) String id);
+    ProductDto findById(@PathVariable String id);
 
     @PostMapping
     ProductDto save(@RequestBody ProductDto product);
@@ -28,6 +28,6 @@ public interface PublicProductController {
     ProductDto update(@RequestBody ProductDto product);
 
     @DeleteMapping("/{id}")
-    void delete(@PathVariable(required = true) String id);
+    void delete(@PathVariable String id);
 
 }

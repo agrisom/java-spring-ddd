@@ -8,6 +8,8 @@ class HexagonalApplicationTests {
 
 	@Test
 	void contextLoads() {
+		HexagonalApplication.main(new String[] {});
+		assert(true);
 	}
 
 }
